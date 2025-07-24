@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-100 text-gray-800">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simpletter - your AI writing assistant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-6">
+  <div class="max-w-xl w-full bg-white shadow-xl rounded-2xl p-6">
+    <h1 class="text-2xl font-bold mb-4 text-center">Simpletter</h1>
+    <form id="letterForm" class="space-y-4">
+      <label class="block">
+        <span class="text-gray-700">Letter Type</span>
+        <select id="letterType" class="form-select mt-1 block w-full border border-gray-300 p-2 rounded">
+          <option value="complaint">Complaint Letter</option>
+          <option value="refund">Refund Request</option>
+          <option value="cancellation">Service Cancellation</option>
+          <option value="cover">Job Cover Letter</option>
+          <option value="custom">Custom</option>
+        </select>
+      </label>
+
+      <label class="block">
+        <span class="text-gray-700">Tone</span>
+        <select id="tone" class="form-select mt-1 block w-full border border-gray-300 p-2 rounded">
+          <option value="professional">Professional</option>
+          <option value="firm">Firm</option>
+          <option value="polite">Polite</option>
+          <option value="apologetic">Apologetic</option>
+        </select>
+      </label>
+
+      <label class="block">
+        <span class="text-gray-700">Details (what the letter is about)</span>
+        <textarea id="details" rows="5" class="mt-1 block w-full border border-gray-300 p-2 rounded" placeholder="E.g., I ordered a product and it arrived damaged..."></textarea>
+      </label>
+
+      <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 rounded hover:bg-blue-700">Generate Letter</button>
+    </form>
+
+    <div id="output" class="mt-6 hidden">
+      <h2 class="text-xl font-semibold mb-2">📬 Your Letter</h2>
+      <pre id="letterText" class="whitespace-pre-wrap bg-gray-50 p-4 rounded border"></pre>
+      <button onclick="copyLetter()" class="mt-3 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Copy to Clipboard</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
